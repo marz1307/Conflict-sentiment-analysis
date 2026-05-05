@@ -1,0 +1,40 @@
+# Default application configuration.
+# Override individual blocks via --config <path>.
+
+paths:
+  raw_data: data/raw/Russia-Ukraine Conflict.xls
+  processed_dir: data/processed
+  models_dir: models
+  figures_dir: reports/figures
+  tables_dir: reports/tables
+
+sentiment:
+  engines:
+    - textblob
+    - vader
+    - transformer
+  textblob:
+    threshold: 0.1
+  vader:
+    threshold: 0.05
+  transformer:
+    model_name: cardiffnlp/twitter-roberta-base-sentiment-latest
+    max_length: 128
+    batch_size: 32
+    cache_dir: null
+    random_state: 42
+
+lda:
+  num_topics: 5
+  passes: 10
+  no_below: 20
+  no_above: 0.5
+  alpha: auto
+  random_state: 42
+  top_n_words: 15
+
+plotting:
+  style: whitegrid
+  palette: viridis
+  figsize_default: [12, 8]
+  dpi: 100

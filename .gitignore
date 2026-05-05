@@ -1,0 +1,72 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+*.egg
+
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+.DS_Store
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+.tox/
+.nox/
+
+# Type checkers
+.mypy_cache/
+.ruff_cache/
+
+# Project artefacts: data outputs, models, NLTK / HF caches
+data/processed/*
+!data/processed/.gitkeep
+models/*
+!models/.gitkeep
+reports/tables/*
+!reports/tables/.gitkeep
+nltk_data/
+.cache/
+~/.cache/huggingface/
+hf_cache/
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.ckpt
+
+# Internal restructure working docs (not for public consumption)
+AUDIT.md
+CORRECTIONS.md

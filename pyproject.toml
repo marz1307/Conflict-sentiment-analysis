@@ -1,0 +1,101 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "conflict-sentiment"
+version = "0.1.0"
+description = "Multi-engine sentiment analysis and LDA topic modelling for Russia and Ukraine conflict news coverage."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Marvis Osazuwa", email = "marvis.osazuwa@hotmail.com" },
+]
+keywords = ["nlp", "sentiment-analysis", "topic-modelling", "lda", "transformers", "news"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "pandas>=2.0",
+    "numpy>=1.24",
+    "matplotlib>=3.7",
+    "seaborn>=0.12",
+    "nltk>=3.8",
+    "textblob>=0.17",
+    "wordcloud>=1.9",
+    "gensim>=4.3",
+    "scikit-learn>=1.3",
+    "torch>=2.0",
+    "transformers>=4.30",
+    "pyyaml>=6.0",
+    "pydantic>=2.0",
+    "openpyxl>=3.1",
+    "xlrd>=2.0",
+    "tqdm>=4.65",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-cov>=4.1",
+    "pytest-mock>=3.11",
+    "ruff>=0.1.6",
+    "black>=23.10",
+    "isort>=5.12",
+    "pre-commit>=3.5",
+    "ipykernel>=6.25",
+]
+
+[project.scripts]
+conflict-sentiment = "conflict_sentiment.cli:main"
+
+[project.urls]
+Homepage = "https://marz1307.github.io"
+Source = "https://github.com/marz1307"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/conflict_sentiment"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["B011"]
+
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311", "py312"]
+
+[tool.isort]
+profile = "black"
+line_length = 100
+known_first_party = ["conflict_sentiment"]
+
+[tool.pytest.ini_options]
+minversion = "7.0"
+addopts = "-ra --strict-markers"
+testpaths = ["tests"]
+markers = [
+    "slow: marks tests as slow (deselect with -m 'not slow')",
+]
+
+[tool.coverage.run]
+source = ["src/conflict_sentiment"]
+branch = true
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
