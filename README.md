@@ -13,7 +13,7 @@
 
 ## Overview
 
-This project quantifies how 8,158 English-language news articles framed the Russia and Ukraine conflict across 68 publishers and 18 countries. It runs three complementary sentiment engines (TextBlob, VADER, CardiffNLP RoBERTa) and a five-topic LDA model over the same corpus, then surfaces publisher, country, and topic level differences. The transformer's signed sentiment score is the primary cross-publisher metric; the lexicon engines provide an interpretable baseline.
+This is a comparative methodology study that quantifies how 8,158 English-language news articles framed the Russia and Ukraine conflict across 68 publishers and 18 countries. It runs three complementary sentiment engines (TextBlob, VADER, CardiffNLP RoBERTa) and a five-topic LDA model over the same corpus, then surfaces publisher, country, and topic level differences. The transformer's signed sentiment score is the primary cross-publisher metric; the lexicon engines provide an interpretable baseline. The work is descriptive of media framing, not of the underlying events.
 
 ## Approach
 
